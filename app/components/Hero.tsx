@@ -1,3 +1,5 @@
+import CTAButton from "./CTAButton";
+
 const flavors = [
   { label: "Chocolate Chip", style: { background: "#FDF0E8", color: "#5A4037", borderColor: "#5A4037" } },
   { label: "Vanilla Dream", style: { background: "#FFF8E7", color: "#b07c00", borderColor: "#F5B44C" } },
@@ -113,8 +115,8 @@ export default function Hero() {
             <div
               style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", marginBottom: 40 }}
             >
-              <a
-                href="#pricing"
+              <CTAButton
+                plan="starter"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -125,12 +127,11 @@ export default function Hero() {
                   borderRadius: 100,
                   background: "#F5B44C",
                   color: "#304B70",
-                  textDecoration: "none",
                   boxShadow: "0 4px 16px rgba(245,180,76,0.4)",
                 }}
               >
                 Get Your First Box — $9
-              </a>
+              </CTAButton>
               <a
                 href="#how-it-works"
                 style={{

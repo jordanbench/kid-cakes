@@ -1,3 +1,6 @@
+import CTAButton from "./CTAButton";
+import type { Plan } from "../providers";
+
 interface PricingTier {
   name: string;
   price: string | number;
@@ -5,6 +8,7 @@ interface PricingTier {
   desc: string;
   features: string[];
   cta: string;
+  plan: Plan;
   featured?: boolean;
 }
 
@@ -21,6 +25,7 @@ const tiers: PricingTier[] = [
       "30-day satisfaction guarantee",
     ],
     cta: "Try a Starter Box",
+    plan: "starter",
   },
   {
     name: "Monthly",
@@ -36,6 +41,7 @@ const tiers: PricingTier[] = [
       "Pause or cancel anytime",
     ],
     cta: "Start Monthly — $24/mo",
+    plan: "monthly",
     featured: true,
   },
   {
@@ -51,6 +57,7 @@ const tiers: PricingTier[] = [
       "Early access to new flavors",
     ],
     cta: "Get the Bundle",
+    plan: "bundle",
   },
 ];
 
@@ -239,17 +246,17 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a
-                href="#"
+              <CTAButton
+                plan={tier.plan}
                 style={{
                   display: "flex",
                   justifyContent: "center",
+                  width: "100%",
                   fontFamily: "var(--font-outfit)",
                   fontWeight: 700,
                   fontSize: "1rem",
                   padding: "16px 32px",
                   borderRadius: 100,
-                  textDecoration: "none",
                   ...(tier.featured
                     ? {
                         background: "#F5B44C",
@@ -264,7 +271,7 @@ export default function Pricing() {
                 }}
               >
                 {tier.cta}
-              </a>
+              </CTAButton>
             </div>
           ))}
         </div>

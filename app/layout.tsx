@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Nunito_Sans } from "next/font/google";
+import Providers from "./providers";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -20,8 +21,7 @@ export const metadata: Metadata = {
     "Pancakes picky eaters ask for. Nutrition parents can trust. Monthly boxes of texture-friendly, nutrient-packed pancake mixes designed for the pickiest kids.",
   openGraph: {
     title: "Kid Cakes — Breakfast Without the Battle",
-    description:
-      "Pancakes picky eaters ask for. Nutrition parents can trust.",
+    description: "Pancakes picky eaters ask for. Nutrition parents can trust.",
     type: "website",
   },
 };
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.variable} ${nunitoSans.variable} antialiased`}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

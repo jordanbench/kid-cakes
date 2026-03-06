@@ -1,3 +1,5 @@
+import CTAButton from "./CTAButton";
+
 export default function FinalCTA() {
   return (
     <section
@@ -94,8 +96,8 @@ export default function FinalCTA() {
               flexWrap: "wrap",
             }}
           >
-            <a
-              href="#pricing"
+            <CTAButton
+              plan="starter"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -106,14 +108,13 @@ export default function FinalCTA() {
                 borderRadius: 100,
                 background: "#F5B44C",
                 color: "#304B70",
-                textDecoration: "none",
                 boxShadow: "0 4px 16px rgba(245,180,76,0.4)",
               }}
             >
               Get the $9 Starter Box
-            </a>
-            <a
-              href="#pricing"
+            </CTAButton>
+            <CTAButton
+              plan="monthly"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -124,12 +125,11 @@ export default function FinalCTA() {
                 borderRadius: 100,
                 background: "white",
                 color: "#304B70",
-                textDecoration: "none",
                 boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
               }}
             >
               See All Plans
-            </a>
+            </CTAButton>
           </div>
 
           <div
